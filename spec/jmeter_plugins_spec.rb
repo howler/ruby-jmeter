@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'stepping thread group' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       stepping_thread_group on_sample_error: 'startnextloop', total_threads: 100, initial_delay: 1, start_threads: 2, add_threads: 3, start_every: 4, stop_threads: 5, stop_every: 6, flight_time: 7, rampup: 8
     end.to_doc
   end
@@ -51,7 +51,7 @@ end
 
 describe 'dummy sampler' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         dummy_sampler name: 'dummy sampler name', response_data: 'Some response data'
       end
@@ -71,7 +71,7 @@ end
 
 describe 'perfmon collector' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         perfmon_collector name: 'perfmon collector name',
         nodes:
@@ -104,7 +104,7 @@ end
 describe 'redis data set' do
   describe 'random keep' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           redis_data_set name: 'redis data set name',
             host: 'the_host',
@@ -135,7 +135,7 @@ describe 'redis data set' do
 
   describe 'random remove' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           redis_data_set remove: true
         end
@@ -158,7 +158,7 @@ describe 'jmx collector' do
 
   describe 'passing all optionals' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         jmx_collector(
             name: 'some jmx collector name',
             host: 'localhost',
@@ -202,7 +202,7 @@ describe 'jmx collector' do
 
   describe 'passing no optionals' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         jmx_collector(
             host: '127.0.0.1',
             port: 54321,

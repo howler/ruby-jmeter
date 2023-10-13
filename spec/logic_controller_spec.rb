@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'disabled elements' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       header name: 'Accept', value: '*', enabled: false
     end.to_doc
   end
@@ -16,7 +16,7 @@ end
 
 describe 'If' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         If condition: '2>1' do
           visit url: "/"
@@ -34,7 +34,7 @@ end
 
 describe 'exists' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         exists 'apple' do
           visit url: "/"
@@ -52,7 +52,7 @@ end
 
 describe 'While' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         While condition: 'true' do
           visit url: "/"
@@ -70,7 +70,7 @@ end
 
 describe 'Counter' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         visit url: "/" do
           counter start: 1, per_user: true
@@ -88,7 +88,7 @@ end
 
 describe 'Switch' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         Switch value: 'cat' do
           visit url: "/"
@@ -106,7 +106,7 @@ end
 
 describe 'Nested controllers' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       Simple name: 'node1.1' do
         Simple name: 'node2.1'
         Simple name: 'node2.2' do

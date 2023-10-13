@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   threads count: 1 do
     visit 'https://flood.io/d384673f64e3a3/result.json' do
       jsr223_assertion update_at_xpath: [

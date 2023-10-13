@@ -5,7 +5,7 @@ require 'spec_helper'
 describe 'http_cookie_manager' do
   describe 'the clear_each_iteration option should be respected' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         cookies clear_each_iteration: true
       end.to_doc
     end
@@ -20,7 +20,7 @@ describe 'http_cookie_manager' do
   describe 'the user_defined_cookie option should be respected' do
     context 'when the user_defined_cookie option is empty' do
       let(:doc) do
-        test do
+        RubyJmeter.test do
           cookies
         end.to_doc
       end
@@ -44,7 +44,7 @@ describe 'http_cookie_manager' do
 
       context 'with all the cookie attributes provided' do
         let(:doc) do
-          test do
+          RubyJmeter.test do
             cookies user_defined_cookies: [
               {
                 name: cookie_name,
@@ -104,7 +104,7 @@ describe 'http_cookie_manager' do
 
       context 'without optional cookie attributes provided' do
         let(:doc) do
-          test do
+          RubyJmeter.test do
             cookies user_defined_cookies: [
               {
                 name: cookie_name,
@@ -129,18 +129,18 @@ describe 'http_cookie_manager' do
 
       context 'without required cookie attributes provided' do
         it 'should raise an error if name is not provided' do
-          expect { test { cookies user_defined_cookies: [{ value: cookie_value }] } }
+          expect { RubyJmeter.test { cookies user_defined_cookies: [{ value: cookie_value }] } }
             .to raise_error('Cookie name must be provided.')
         end
         it 'should raise an error if value is not provided' do
-          expect { test { cookies user_defined_cookies: [{ name: cookie_name }] } }
+          expect { RubyJmeter.test { cookies user_defined_cookies: [{ name: cookie_name }] } }
             .to raise_error('Cookie value must be provided.')
         end
       end
 
       context 'when multiple cookies are set' do
         let(:doc) do
-          test do
+          RubyJmeter.test do
             cookies user_defined_cookies: [
               {
                 name: cookie_name,

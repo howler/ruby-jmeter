@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   threads count: 1, loops: 5, scheduler: false do
     # Helper method to generate a single UUID per iteration
     uuid_per_iteration

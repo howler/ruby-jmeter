@@ -10,7 +10,7 @@ module RubyJmeter
 end
 
 
-test do
+RubyJmeter.test do
   threads count: 1 do
     test_fragment name: 'RegisterResponseToSentMail', enabled: 'false' do
       test_method_here

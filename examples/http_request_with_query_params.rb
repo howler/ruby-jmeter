@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   threads count: 10 do
     post name: 'Oauth Token', url: 'https://flooded.io/api/oauth?username=Michael&authType=token'
   end

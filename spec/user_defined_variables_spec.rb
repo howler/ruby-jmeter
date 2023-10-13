@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'user_defined_variables' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       variables [
         { name: 'email', value: 'support@flood.io' },
         { name: 'password', value: 'correcthorsebatterystaple' }

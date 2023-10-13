@@ -28,7 +28,7 @@ host = 'localhost'
 port = 8080
 
 # JMeter test plan begins here.
-test do
+RubyJmeter.test do
 
   # Setup the data set we will use to run the tests.
   setup_thread_group name: 'Redis Fill',

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'header manager' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       header name: 'Accept', value: '*'
     end.to_doc
   end
@@ -17,7 +17,7 @@ end
 
 describe 'header manager multiple values' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       header [ { name: 'Accept', value: '1' }, { name: 'Accept', value: '2' }]
     end.to_doc
   end

@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   cookies clear_each_iteration: false
   threads count: 5, rampup: 10 do
     transaction name: 'Google Search' do

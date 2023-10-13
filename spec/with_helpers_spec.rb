@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'xhr' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         transaction name: "TC_02", parent: true, include_timers: true do
           visit url: "/" do
@@ -22,7 +22,7 @@ end
 
 describe 'gzip' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         transaction name: 'TC_02', parent: true, include_timers: true do
           visit url: '/' do
@@ -42,7 +42,7 @@ end
 
 describe 'user agent' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       with_user_agent :chrome
       threads
     end.to_doc

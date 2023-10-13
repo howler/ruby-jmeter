@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'assertions' do
   describe 'json assertion' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         visit '/' do
           assert json: '.key', value: 'value'
         end

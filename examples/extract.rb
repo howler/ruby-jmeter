@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   threads count: 100 do
     visit name: 'Home', url: 'http://altentee.com' do
       extract regex: "content='(.+?)' name='csrf-token'", name: 'csrf-token', match_number: 1

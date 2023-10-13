@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   threads do
     transaction name: "TC_03", parent: true, include_timers: true do
       submit url: "/", fill_in: { username: 'tim', password: 'password' },

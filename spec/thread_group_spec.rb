@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'thread groups' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads count: 101, continue_forever: true, duration: 69
     end.to_doc
   end
@@ -32,7 +32,7 @@ end
 
 describe 'thread groups old syntax' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads 101, continue_forever: true, duration: 69
     end.to_doc
   end

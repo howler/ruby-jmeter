@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'csv_data_set_config' do
   describe 'the options should be respected' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         csv_data_set_config delimiter: '|',
                             filename: 'test.csv',
                             ignoreFirstLine: true,

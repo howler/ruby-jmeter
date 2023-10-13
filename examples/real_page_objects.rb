@@ -32,7 +32,7 @@ class HomePage
   end
 end
 
-test do
+RubyJmeter.test do
   threads count: 1 do
     # then re-use your page objects in your test plan
     home = HomePage.new(self)

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'setup thread groups' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       setup_thread_group count: 101, continue_forever: true, duration: 69
     end.to_doc
   end

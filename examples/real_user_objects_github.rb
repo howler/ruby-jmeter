@@ -82,7 +82,7 @@ class VirtualUser
 end
 
 # JMeter test plan begins here.
-test do
+RubyJmeter.test do
 
   # Defines a thread group. We allow certain parameters to be passed in
   # as system properties.

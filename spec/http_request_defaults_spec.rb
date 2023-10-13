@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'regular_expression_extractor' do
   describe 'standard scope' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         defaults domain: 'example.com',
             protocol: 'https',
             implementation: 'HttpClient3.1',

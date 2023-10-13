@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   threads count: 100 do # threads = RPS * <max response time ms> / 1000
 
     throughput_shaper name: 'increasing load test', steps: [

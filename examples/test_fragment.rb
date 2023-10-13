@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
 
   test_fragment name: 'anonymous_user', enabled: false do
     get name: 'Home Page', url: 'http://google.com'
