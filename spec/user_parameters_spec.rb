@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'user_parameters' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         transaction name: 'user_parameters', parent: true, include_timers: true do
           visit url: "/" do

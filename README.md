@@ -28,7 +28,7 @@ require 'ruby-jmeter'
 Let's create a `test` and save the related `jmx` testplan to file, so we can edit/view it in JMeter.
 
 ```ruby
-test do
+RubyJmeter.test do
   threads count: 10 do
     visit name: 'Google Search', url: 'http://google.com'
   end
@@ -60,7 +60,7 @@ JMX saved to: jmeter.jmx
 The file that is created can then be executed in the JMeter GUI. If you want to create the file with a different filename and/or path, just add the `file` parameter to the `jmx` method call like this.
 
 ```ruby
-test do
+RubyJmeter.test do
   threads count: 10 do
     visit name: 'Google Search', url: 'http://google.com'
   end
@@ -77,7 +77,7 @@ Windows users should specify a path like this.
 You can execute the JMeter test plan by calling the `run` method of the test like this.
 
 ```ruby
-test do
+RubyJmeter.test do
   threads count: 10 do
     visit name: 'Google Search', url: 'http://google.com'
   end
@@ -87,7 +87,7 @@ end.run
 This will launch JMeter in headless (non-GUI mode) and execute the test plan. This is useful for shaking out the script before you push it to the Grid. There are a few parameters that you can set such as the `path` to the JMeter binary, the `file` path/name for the JMX file, the `log` path/name to output JMeter logs, the `jtl` path/name for JMeter results like this, and the `properties` path/name for the additional JMeter property file.
 
 ```ruby
-test do
+RubyJmeter.test do
   threads count: 10 do
     visit name: 'Google Search', url: 'http://google.com'
   end
@@ -106,7 +106,7 @@ You can also execute JMeter test plans on Flood IO using our API. To do so, you 
 To execute the test on Flood IO, call the `flood` method on the test and pass it the API token like this.
 
 ```ruby
-test do
+RubyJmeter.test do
   threads count: 10 do
     visit name: 'Google Search', url: 'http://google.com'
   end
@@ -145,7 +145,7 @@ Each of the methods take an optional block delimited by `do` and `end` or braces
 Blocks let you nest methods within methods, so you can scope the execution of methods as you would in a normal JMeter test plan. For example.
 
 ```ruby
-test do
+RubyJmeter.test do
   threads count: 100 do
     visit name: 'Home', url: 'http://altentee.com' do
       extract regex: "content='(.+?)' name='csrf-token'", name: 'csrf-token'
@@ -179,7 +179,7 @@ threads count: 100, scheduler: true,
 You can use the `cookies` method to define a Cookie Manager:
 
 ```ruby
-test do
+RubyJmeter.test do
   cookies
 end
 ```
@@ -187,11 +187,11 @@ end
 This methods takes an optional parameters hash. This is based on the [HTTP Cookie Manager](http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Cookie_Manager).
 
 ```ruby
-test do
+RubyJmeter.test do
   cookies clear_each_iteration: false
 end
 
-test do
+RubyJmeter.test do
   cookies policy: 'rfc2109', clear_each_iteration: true
 end
 ```
@@ -201,7 +201,7 @@ end
 The `cookies` method parameters hash supports `user_defined_cookies`:
 
 ```ruby
-test do
+RubyJmeter.test do
   cookie1 = { value: 'foo', name: 'bar', domain: 'google.co.uk', path: '/' }
   cookie2 = { value: 'hello', name: 'world', domain: 'google.co.uk', secure: true }
 
@@ -217,7 +217,7 @@ end
 You can use the `cache` method to define a Cache Manager:
 
 ```ruby
-test do
+RubyJmeter.test do
   cache
 end
 ```
@@ -225,11 +225,11 @@ end
 This methods takes an optional parameters hash. This is based on the [HTTP Cache Manager](http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Cache_Manager).
 
 ```ruby
-test do
+RubyJmeter.test do
   cache clear_each_iteration: false
 end
 
-test do
+RubyJmeter.test do
   cache use_expires: true, clear_each_iteration: true
 end
 ```
@@ -239,7 +239,7 @@ end
 You can use the `auth` method to define an Authorization Manager:
 
 ```ruby
-test do
+RubyJmeter.test do
   auth
 end
 ```
@@ -247,7 +247,7 @@ end
 This methods takes an optional parameters hash. This is based on the [HTTP Authorization Manager](http://jmeter.apache.org/usermanual/component_reference.html#HTTP_Authorization_Manager).
 
 ```ruby
-test do
+RubyJmeter.test do
   auth url: '/', username: 'tim', password: 'secret', domain: 'altentee.com'
 end
 ```

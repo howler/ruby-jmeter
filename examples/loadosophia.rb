@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
 
   # You need to either add the project name and upload token from Loadosophia.org here,
   # or use a property file (-q flag when running jmeter).

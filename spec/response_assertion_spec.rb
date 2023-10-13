@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'response assertion' do
   describe 'standard scope' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         assert contains: 'We test, tune and secure your site'
       end.to_doc
     end
@@ -25,7 +25,7 @@ describe 'response assertion' do
 
   describe 'custom scope' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         assert 'not-contains' => 'Something in frames', scope: 'children'
       end.to_doc
     end
@@ -47,7 +47,7 @@ describe 'response assertion' do
 
   describe 'variable scope' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         assert 'substring' => 'Something in frames', scope: 'children', variable: 'test'
       end.to_doc
     end

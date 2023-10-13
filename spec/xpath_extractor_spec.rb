@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'xpath extract' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       extract xpath: '//node', name: 'my_xpath'
     end.to_doc
   end

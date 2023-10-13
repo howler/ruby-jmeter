@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   threads count: 1 do
     transaction name: 'Post with a Raw Body', parent: false do
       post name: 'Home Page', url: 'http://google.com',

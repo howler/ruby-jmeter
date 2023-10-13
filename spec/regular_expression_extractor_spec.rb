@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'regular_expression_extractor' do
   describe 'standard scope' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         regex pattern: 'pattern', name: 'my_variable', match_number: 1, default: '424242'
       end.to_doc
     end
@@ -37,7 +37,7 @@ describe 'regular_expression_extractor' do
 
   describe 'variable scope' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         regex pattern: 'pattern', name: 'my_variable', variable: 'test_variable'
       end.to_doc
     end

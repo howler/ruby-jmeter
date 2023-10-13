@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'http_request' do
   describe 'get basic' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           get name: 'Home Page', url: 'https://flooded.io/'
         end
@@ -35,7 +35,7 @@ describe 'http_request' do
 
   describe 'get with options' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           get name: 'Home Page', url: 'https://flooded.io/', follow_redirects: false, use_keepalive: false
         end
@@ -55,7 +55,7 @@ describe 'http_request' do
 
   describe 'visit' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           visit name: 'Home Page', url: 'https://flooded.io/'
         end
@@ -71,7 +71,7 @@ describe 'http_request' do
 
   describe 'visit variations' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           visit url: "/home?location=melbourne&location=sydney", always_encode: true
         end
@@ -115,7 +115,7 @@ describe 'http_request' do
 
   describe 'visit old syntax' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           visit "/home?location=melbourne", always_encode: true
         end
@@ -131,7 +131,7 @@ describe 'http_request' do
 
   describe 'https' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           visit url: "https://example.com"
         end
@@ -147,7 +147,7 @@ describe 'http_request' do
 
   describe 'post' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           post name: 'Home Page', url: 'https://flooded.io/'
         end
@@ -163,7 +163,7 @@ describe 'http_request' do
 
   describe 'post raw_path' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           transaction name: "TC_02" do
             post url: "/home?location=melbourne", raw_path: true
@@ -181,7 +181,7 @@ describe 'http_request' do
 
   describe 'post raw body containing xml entities' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           post url: 'http://example.com', raw_body: 'username=my_name&password=my_password&email="my name <test@example.com>"'
         end
@@ -197,7 +197,7 @@ describe 'http_request' do
 
   describe 'submit' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           submit name: 'Home Page', url: 'https://flooded.io/'
         end
@@ -213,7 +213,7 @@ describe 'http_request' do
 
   describe 'submit variations' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           submit url: '/', fill_in: { username: 'tim', password: 'password' }
         end
@@ -233,7 +233,7 @@ describe 'http_request' do
 
   describe 'submit_with_files' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads do
           transaction name: "TC_03", parent: true, include_timers: true do
             submit url: "/", fill_in: { username: 'tim', password: 'password' },
@@ -257,7 +257,7 @@ describe 'http_request' do
 
   describe 'patch' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           patch name: 'Home Page', url: 'https://flooded.io/'
         end
@@ -273,7 +273,7 @@ describe 'http_request' do
 
   describe 'head' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           head name: 'Home Page', url: 'https://flooded.io/'
         end
@@ -289,7 +289,7 @@ describe 'http_request' do
 
   describe 'put' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         threads count: 1 do
           put name: 'Home Page', url: 'https://flooded.io/'
         end

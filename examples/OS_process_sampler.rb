@@ -17,7 +17,7 @@ build_args = ->(args) do
 end
 
 
-test do
+RubyJmeter.test do
   os_process_sampler 'SystemSampler.command' => 'git',
                       update_at_xpath: build_args.call(['push', 'origin', 'master'])
 

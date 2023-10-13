@@ -95,8 +95,8 @@ module RubyJmeter
       @log
     end
   end
-end
 
-def test(params = {}, &block)
-  RubyJmeter.dsl_eval(RubyJmeter::ExtendedDSL.new(params), &block)
+  def self.test(params = {}, &block)
+    RubyJmeter.dsl_eval(RubyJmeter::ExtendedDSL.new(params), &block)
+  end
 end

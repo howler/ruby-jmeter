@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'transaction controller' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         transaction name: 'TC_01', parent: false, include_timers: true
         transaction name: 'TC_02', parent: true, include_timers: false

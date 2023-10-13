@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'json extract' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       extract json: '.test.path', name: 'my_json'
     end.to_doc
   end

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'throughput controller' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         throughput_controller percent: 99 do
           transaction name: "TC_01", parent: true, include_timers: true

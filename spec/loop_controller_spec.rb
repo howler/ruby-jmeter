@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'loop' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         loops count: 5 do
           visit url: "/"

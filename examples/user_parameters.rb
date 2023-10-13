@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'ruby-jmeter'
 
-test do
+RubyJmeter.test do
   # user parameters with multiple values
   post name: 'oauth', url: 'https://flooded.io/api/oauth',  raw_body: '${token}' do
     user_parameters names: ['token'],

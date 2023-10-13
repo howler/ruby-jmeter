@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'constant_throughput_timer' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       threads do
         constant_throughput_timer value: 60.0
         constant_throughput_timer throughput: 70.0

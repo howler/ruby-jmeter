@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'module controllers' do
   let(:doc) do
-    test name: 'tests' do
+    RubyJmeter.test name: 'tests' do
       threads 1, name: 'threads' do
         Simple name: 'controller_to_call'
       end
@@ -32,7 +32,7 @@ end
 
 describe 'module controllers with test fragment' do
   let(:doc) do
-    test do
+    RubyJmeter.test do
       test_fragment name: 'some_test_fragment', enabled: 'false' do
         get name: 'Home Page', url: 'http://google.com'
       end

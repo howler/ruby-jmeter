@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'http_cache_manager' do
   describe 'the clear_each_iteration option should be respected' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         cache clear_each_iteration: true
       end.to_doc
     end
@@ -17,7 +17,7 @@ describe 'http_cache_manager' do
 
   describe 'the use_expires option should be respected' do
     let(:doc) do
-      test do
+      RubyJmeter.test do
         cache use_expires: true
       end.to_doc
     end
